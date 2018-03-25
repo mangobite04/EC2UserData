@@ -63,7 +63,7 @@ echo ""
 chmod +x /var/www/html/index.php
 
 # HTTPD Services Start
-/sbin/service httpd start
+service httpd start
 
 # Adding in config file to start after server reboot
 /sbin/chkconfig --add httpd
@@ -76,14 +76,14 @@ cd /usr/local
 wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
 
 # untar apache-maven file
-/usr/bin/tar xzf apache-maven-3.5.2-bin.tar.gz
+tar xzf apache-maven-3.5.2-bin.tar.gz
 
 # Linking of maven
-/usr/bin/ln -s apache-maven-3.5.2  maven
+ln -s apache-maven-3.5.2  maven
 
 # Setup Maven Path
-/usr/bin/echo export M2_HOME=/usr/local/maven > /etc/profile.d/maven.sh
-/usr/bin/echo export PATH=${M2_HOME}/bin:${PATH} >> /etc/profile.d/maven.sh
+echo export M2_HOME=/usr/local/maven > /etc/profile.d/maven.sh
+echo export PATH=${M2_HOME}/bin:${PATH} >> /etc/profile.d/maven.sh
 source /etc/profile.d/maven.sh
 
 # Cloaning of Project - Relay24
