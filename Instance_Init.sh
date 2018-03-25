@@ -33,32 +33,32 @@ yum install php70-pecl-apcu -y
 rm -f /usr/local/apache-maven-3.5.2-bin.tar.gz
 
 # Creating PHP file for Project - Relay24
-cat > /var/www/html/index.php << "EOFF"
+cat > /var/www/html/index.php << "EOL"
 <html>
   <body>
-    <h1>
+    <h1>AWS Zone Information</h1>
+    <h2>
     <?php
-      // Setup a handle for CURL
+      // Setup a handle for CURL
       $curl_handle=curl_init();
       curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2);
       curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
-      
       // Get the EC2_AVAIL_ZONE of the intance from the instance metadata
       curl_setopt($curl_handle,CURLOPT_URL,'http://169.254.169.254/latest/meta-data/placement/availability-zone');
       $ec2_avail_zone = curl_exec($curl_handle);
       if (empty($ec2_avail_zone))
       {
-        print \"NOTES: NO EC2_Availibty_ZONE  <br />\";
+        print "Note: Sorry, for some reason, we got no ec2_avail_zone back <br />";
       }
       else
       {
-        print \"EC2_AVAIL_ZONE = \" . $ec2_avail_zone . \"<br />\";
+      print "EC2_AVAIL_ZONE = " . $ec2_avail_zone . "<br />";
       }
-    ?>
-    <h1>
-   </body>
-  </html>
-EOFF
+    ?>
+    <h2>
+  </body>
+</html>
+EOL
 echo ""
 chmod +x /var/www/html/index.php
 
