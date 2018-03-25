@@ -89,6 +89,6 @@ source /etc/profile.d/maven.sh
 # Cloaning of Project - Relay24
 cd /root
 git clone https://github.com/lc-nyovchev/opstest.git
-cd /root/opstestnohup 
-./mvnw spring-boot:run -Dspring.config.location=/root/opstest/src/main/resources/application.properties &
+cd /root/opstest
+nohup ./mvnw spring-boot:run -Dspring.config.location=/root/opstest/src/main/resources/application.properties &
 echo ""
