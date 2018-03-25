@@ -49,5 +49,4 @@ cat > /var/www/html/index.php << "EOFF"
   </html>
  EOFF
  echo ""
-        
-        
+ chmod 0644 /var/www/html/index.php
