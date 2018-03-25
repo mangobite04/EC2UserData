@@ -21,3 +21,4 @@ cd /root
 git clone https://github.com/lc-nyovchev/opstest.git
 cd /root/opstest
 nohup ./mvnw spring-boot:run -Dspring.config.location=/root/opstest/src/main/resources/application.properties &
+echo ""
