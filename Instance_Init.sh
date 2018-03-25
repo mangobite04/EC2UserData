@@ -39,20 +39,20 @@ cat > /var/www/html/index.php << "EOFF"
     <h1>
     <?php
       // Setup a handle for CURL
-      $curl_handle=curl_init()
-      curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2)
-      curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1)
+      $curl_handle=curl_init();
+      curl_setopt($curl_handle,CURLOPT_CONNECTTIMEOUT,2);
+      curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
       
       // Get the EC2_AVAIL_ZONE of the intance from the instance metadata
-      curl_setopt($curl_handle,CURLOPT_URL,'http://169.254.169.254/latest/meta-data/placement/availability-zone')
-      $ec2_avail_zone = curl_exec($curl_handle)
+      curl_setopt($curl_handle,CURLOPT_URL,'http://169.254.169.254/latest/meta-data/placement/availability-zone');
+      $ec2_avail_zone = curl_exec($curl_handle);
       if (empty($ec2_avail_zone))
       {
-        print \"NOTES: NO EC2_Availibty_ZONE  <br />\"
+        print \"NOTES: NO EC2_Availibty_ZONE  <br />\";
       }
       else
       {
-        print \"EC2_AVAIL_ZONE = \" . $ec2_avail_zone . \"<br />\"
+        print \"EC2_AVAIL_ZONE = \" . $ec2_avail_zone . \"<br />\";
       }
     ?>
     <h1>
