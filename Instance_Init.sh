@@ -9,9 +9,6 @@ yum install java-1.8.*-openjdk-headless.x86_64 -y
 yum install java-1.8.*-openjdk-devel.x86_64 -y
 yum install -y wget
 yum install -y curl
-yum install -y httpd
-yum install -y php
-yum install -y php-mysql
 
 # Remove current apache & php 
 yum remove httpd* php*
