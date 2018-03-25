@@ -86,6 +86,9 @@ echo export M2_HOME=/usr/local/maven > /etc/profile.d/maven.sh
 echo export PATH=${M2_HOME}/bin:${PATH} >> /etc/profile.d/maven.sh
 source /etc/profile.d/maven.sh
 
+# HTTPD Restart
+service httpd restart
+
 # Cloaning of Project - Relay24
 cd /root
 git clone https://github.com/lc-nyovchev/opstest.git
