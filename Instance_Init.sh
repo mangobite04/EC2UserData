@@ -9,6 +9,9 @@ yum install java-1.8.*-openjdk-headless.x86_64 -y
 yum install java-1.8.*-openjdk-devel.x86_64 -y
 yum install -y wget
 yum install -y curl
+yum install -y httpd
+yum install -y php
+yum install -y php-mysql
 cd /usr/local
 wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
 /usr/bin/tar xzf apache-maven-3.5.2-bin.tar.gz
